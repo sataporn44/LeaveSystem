@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>หน้ากรอกข้อมูล</title>
+{% endblock %}
+
+{% block content %}
+    <h2 align="center">แบบฟอร์มกรอกข้อมูล</h2>
+    <form method="post" action="/addForm/" id="register_form" class="container" >
+        {% csrf_token %}
+        <div class="form-group mb-3">
+            <label for="username">username</label>
+            <input type="text" name="username" class="form-control">
+        </div>
+         <div class="form-group mb-3">
+            <label for="first_name">ชื่อจริง</label>
+            <input type="text" name="first_name" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+            <label for="last_name">นามสกุล</label>
+            <input type="text" name="last_name" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+            <label for="nickname">ชื่อเล่น</label>
+            <input type="text" name="nickname" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+            <label for="tel">เบอร์โทรศัพท์</label>
+            <input type="tel" name="tel" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+            <label for="team">ทีม</label>
+            <input type="text" name="team" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+            <label for="position">ตำแหน่ง</label>
+            <input type="text" name="position" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+            <label for="email">email</label>
+            <input type="email" name="email" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control">
+        </div>
+        <div class="form-group mb-4">
+            <label for="leader">หัวหน้า</label>
+            <input type="text" name="leader" class="form-control">
+        </div>
+    <button type="submit" class="btn btn-outline-success">บันทึกข้อมูล</button>
+</form>
+{% endblock %}

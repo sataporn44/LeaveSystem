@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>หน้าข้อมูลทั่วไป</title>
+{% endblock %}
+
+{% block content %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Leave Control System</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Hello, {{user.username}}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/createForm">กรอกข้อมูล</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">LOGOUT</a>
+            </li>
+            {% endif %}
+        </ul>
+      </div>
+    </div>
+     </nav>
+
+    <h2 class="text-center">ข้อมูลทั่วไป</h2>
+    {% if user.is_authenticated %}
+    <form id="info" class="container">
+        <div class="form-group mb-3">
+            <label for="username">Username: {{user.username}}</label>
+        </div>
+        <div class="form-group mb-3">
+            <label for="username">ชื่อจริง: {{user.first_name}}</label>
+        </div>
+        <div class="form-group mb-3">
+            <label for="username">นามสกุล: {{user.last_name}}</label>
+        </div>
+        <div class="form-group mb-3">
+            <label for="username">ชื่อเล่น: {{user.nickname}}</label>
+        </div>
+        <div class="form-group mb-3">
+            <label for="username">เบอร์โทรศัพท์: {{user.tel}}</label>
+        </div>
+        <div class="form-group mb-3">
+            <label for="username">ทีม: {{user.team}}</label>
+        </div>
+        <div class="form-group mb-3">
+            <label for="username">ตำแหน่ง: {{user.position}}</label>
+        </div>
+        <div class="form-group mb-3">
+            <label for="username">Email: {{user.email}}</label>
+        </div>
+        <div class="form-group mb-3">
+            <label for="username">หัวหน้า: {{user.leader}}</label>
+        </div>
+        
+        <button type="button" class="btn btn-outline-warning">ตรวจสอบวันลา</button>
+        <button type="button" class="btn btn-outline-success">ทำเรื่องลา</button>
+    </form>
+    {% endif %}
+
+{% endblock %}
