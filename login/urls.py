@@ -9,4 +9,5 @@ urlpatterns = [
     path('addForm/', views.addForm),
     path('hr/', views.hr),
     path('leader/', views.leader),
+    path('logout', views.logout),
 ]

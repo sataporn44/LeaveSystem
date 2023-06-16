@@ -88,6 +88,10 @@ def hr(request):
 def leader(request):
     return render(request, 'leader.html')
 
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
+
    
 
     
