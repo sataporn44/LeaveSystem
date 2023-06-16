@@ -77,7 +77,7 @@ def login(request):
             elif user.position=='Boss':
                return redirect('/leader')
             else:
-                return redirect('/info')
+                 return redirect('/info')
         else:
             messages.info(request, 'Username or Password is incorrect')
             return redirect('/')
